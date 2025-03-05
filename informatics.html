@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Конспекты по основным школьным предметам. Математика, информатика, история, русский язык, физика, ОБЖ.">
+        <title> конспекты</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/dark.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+  <style>
+#background {
+  position: fixed; /* Фиксированное положение, чтобы фон всегда был на месте */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Отправляем фон за контент */
+  pointer-events: none; /* Позволяет контенту быть кликабельным сквозь фон */
+}
+
+.content {
+  position: relative; /*  Позволяет позиционировать контент поверх фона */
+  z-index: 1; /* Помещаем контент выше фона */
+  padding: 20px;
+  text-align: center;
+  min-height: 100vh; /*  Минимальная высота вьюпорта, чтобы контент мог прокручиваться */
+}
+
+
+.binary-digit {
+  position: absolute;
+  font-size: 1.2em;
+  color: #0f0; /* Ярко-зеленый цвет для бинарного кода */
+  animation: falling 10s linear infinite; /*  Анимация падения */
+  white-space: nowrap; /* Предотвращает перенос текста */
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+  </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="./"><img src="./img/acetone-2025223-205340-77.png" alt="Логотип">Все конспекты</a>
+                <span class="site-description">Ваш помощник в учебе</span>
+            </div>
+            <button class="burger-menu">☰</button>  <!-- Кнопка гамбургер-меню -->
+
+            <div class="nav-items">
+                <a href="index.html"><i class="fa fa-home"></i> Главная</a>
+                <div id="userProfile"></div>   
+            </div>
+            <div class="theme-toggle">
+                <i class="fa-solid fa-moon"></i>
+            </div>
+        </nav>
+    </header>
+  <div id="background"></div>
+  <div class="content">
+    <main>
+
+        <div class="home">
+            <h1>Добро пожаловать в мои конспекты по информатике</h1>
+
+        </div>
+<div class="home">
+    <h2>Предметы:</h2>
+    </div>
+
+            
+            <div class="subjects-grid">
+
+                <a href="./codir.html" class="subject-card" data-subject="math">
+                    <div class="subject-header">
+                        <img src="./img/codir.webp" alt="Кодировка">
+                    </div>
+                    <div class="subject-color-bar" style="background-color: #2ebacc;"></div>
+                    <div class="subject-body">
+                        <i class="fa fa-cog"></i>
+                        <h3>Кодировка</h3>
+                        <p>Универсальные кодировки</p>
+                        <div class="progress-circle">
+                            
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./sihka.html" class="subject-card" data-subject="math">
+                    <div class="subject-header">
+                        <img src="./img/cihka.jpg" alt="C#">
+                    </div>
+                    <div class="subject-color-bar" style="background-color: #2ebacc;"></div>
+                    <div class="subject-body">
+                        <i class="fa fa-cogs"></i>
+                        <h3>С#</h3>
+                        <p>Изучение C# (языка прородителя)</p>
+                        <div class="progress-circle">
+                            
+                        </div>
+                    </div>
+                </a>
+
+        </main>
+
+
+
+
+
+
+  </div>
+
+  <div class="auth-container hidden" id="auth_block">
+    <div class="auth-container">
+        <div class="form-container">
+            <div class="login-form" id="loginForm">
+                <h2>Вход</h2>
+                <form id="loginFormInner">
+                    <div class="form-group">
+                        <label for="usernameLogin">:</label>
+                        <input type="text" id="usernameLogin" name="usernameLogin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordLogin">:</label>
+                        <input type="password" id="passwordLogin" name="passwordLogin" required>
+                    </div>
+                    <button type="submit"></button>
+                    <p class="error-message" id="loginErrorMessage"></p>
+                </form>
+                <a href="#" class="form-switch" id="showRegisterForm"></a>
+            </div>
+
+            <div class="register-form hidden" id="registerForm">
+                <h2></h2>
+                <form id="registerFormInner">
+                    <div class="form-group">
+                        <label for="usernameRegister"></label>
+                        <input type="text" id="usernameRegister" name="usernameRegister" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordRegister"></label>
+                        <input type="password" id="passwordRegister" name="passwordRegister" required>
+                    </div>
+                    <button type="submit"></button>
+                    <p class="error-message" id="registerErrorMessage"></p>
+                </form>
+                <a href="#" class="form-switch" id="showLoginForm"></a>
+            </div>
+
+            <div class="welcome-message hidden" id="welcomeMessage">
+                <h2><span id="loggedInUsername"></span>!</h2>
+                <p><a href="./index.html"></a></p>
+                <button id="logoutButton"></button>
+            </div>
+        </div>
+    </div>
+</div>
+  <script src="script.js"></script>
+  <script src="burger.js"></script>
+  <script src="theme.js"></script>
+  <script src="akk.js"></script>
+  <script src="anim.js"></script>
+</body>
+</html>

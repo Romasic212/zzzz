@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Конспекты по математике - Тригонометрия.">
+    <title>Пределы</title>
+    <link rel="stylesheet" href="./css/predmet/math.css">
+    <link rel="stylesheet" href="./css/dark.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/predmet/tema.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+
+
+</head>
+
+<body>
+        <header>
+            <nav>
+                <div class="logo">
+                    <a href="./"><img src="" alt="Логотип">Все конспекты</a>
+                    <span class="site-description">Ваш помощник в учебе</span>
+                </div>
+                <button class="burger-menu">☰</button>
+    
+                <div class="nav-items">
+                    <a href="./index.html"><i class="fa fa-home"></i> Главная</a>
+                    <a href="math.html"><i class="fa fa-calculator"></i> Математика</a>
+                    <div id="userProfile"></div>
+                </div>
+                <div class="theme-toggle">
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+    
+            </nav>
+        </header>
+    
+        <div id="particles-js"></div>
+    
+        <div class="home">
+            <h1>Пределы: Введение в анализ бесконечно малых</h1>
+            <p>Здесь вы найдете все необходимые конспекты по пределам.</p>
+    
+            <h2>Разделы:</h2>
+        </div>
+    
+        <main>
+            <div class="topic-block">
+                <div class="topic-header">1) Что такое предел функции?</div>
+                <div class="topic-content">
+                    <p>Простыми словами, предел функции в точке — это значение, к которому стремится функция, когда аргумент приближается к этой точке. Формально это записывается как:</p>
+                    <div class="formula">
+                        $$ \lim_{x \to a} f(x) = L $$
+                    </div>
+                    <p>Это читается как "предел функции f(x) при x стремящемся к a равен L".</p>
+                </div>
+            </div>
+    
+            <div class="topic-block">
+                <div class="topic-header">2) Виды пределов</div>
+                <div class="topic-content">
+                    <ul>
+                        <li><b>Конечный предел:</b> Функция стремится к определенному числу.</li>
+                        <li><b>Бесконечный предел:</b> Функция неограниченно возрастает или убывает.</li>
+                        <li><b>Односторонние пределы:</b> Рассматривают приближение к точке слева (левый предел) или справа (правый предел).
+                            <ul>
+                                <li>Левый предел:  $$ \lim_{x \to a^-} f(x) $$</li>
+                                <li>Правый предел:  $$ \lim_{x \to a^+} f(x) $$</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="topic-block">
+                <div class="topic-header">3) Свойства пределов</div>
+                <div class="topic-content">
+                    <ul>
+                        <li>Предел суммы (разности) равен сумме (разности) пределов:
+                            $$ \lim_{x \to a} [f(x) \pm g(x)] = \lim_{x \to a} f(x) \pm \lim_{x \to a} g(x) $$
+                        </li>
+                        <li>Предел произведения равен произведению пределов:
+                            $$ \lim_{x \to a} [f(x) \cdot g(x)] = \lim_{x \to a} f(x) \cdot \lim_{x \to a} g(x) $$
+                        </li>
+                        <li>Предел частного равен частному пределов (если предел знаменателя не равен нулю):
+                            $$ \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)}, \quad \text{если} \quad \lim_{x \to a} g(x) \neq 0 $$
+                        </li>
+                        <li>Предел константы равен самой константе:
+                            $$ \lim_{x \to a} c = c $$
+                        </li>
+                        <li>Предел произведения константы на функцию:
+                            $$ \lim_{x \to a} [c \cdot f(x)] = c \cdot \lim_{x \to a} f(x) $$
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="topic-block">
+                <div class="topic-header">4) Как вычислять пределы?</div>
+                <div class="topic-content">
+                    <p>Существует множество способов вычисления пределов, вот некоторые из них:</p>
+                    <ul>
+                        <li><b>Прямая подстановка:</b> Просто подставьте значение, к которому стремится аргумент, в функцию.</li>
+                        <li><b>Разложение на множители:</b> Попробуйте разложить числитель и знаменатель на множители, чтобы упростить выражение.</li>
+                        <li><b>Умножение на сопряженное выражение:</b> Используется для избавления от иррациональности в числителе или знаменателе.</li>
+                        <li><b>Приведение к общему знаменателю:</b> Полезно для сумм дробей.</li>
+                        <li><b>Правило Лопиталя:</b> Применяется к неопределенностям вида 0/0 или ∞/∞.</li>
+                        <li><b>Замечательные пределы:</b> Использование известных пределов, таких как первый и второй замечательные пределы.</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="topic-block">
+                <div class="topic-header">5) Примеры вычисления пределов</div>
+                <div class="topic-content">
+                    <h3>Пример 1: Прямая подстановка</h3>
+                    <p>Вычислить предел:  $$ \lim_{x \to 2} (x^2 + 3x - 1) $$</p>
+                    <p>Решение: Подставляем x = 2:  $$ (2^2 + 3 \cdot 2 - 1) = 4 + 6 - 1 = 9 $$</p>
+                    <p>Ответ: 9</p>
+    
+                    <h3>Пример 2: Разложение на множители</h3>
+                    <p>Вычислить предел:  $$ \lim_{x \to 1} \frac{x^2 - 1}{x - 1} $$</p>
+                    <p>Решение: Разлагаем числитель:  $$ (x^2 - 1) = (x - 1)(x + 1) $$. Сокращаем (x - 1):  $$ \lim_{x \to 1} (x + 1) = 1 + 1 = 2 $$</p>
+                    <p>Ответ: 2</p>
+    
+                    <h3>Пример 3: Правило Лопиталя</h3>
+                    <p>Вычислить предел:  $$ \lim_{x \to 0} \frac{\sin(x)}{x} $$</p>
+                    <p>Решение: Это неопределенность вида 0/0. Применяем правило Лопиталя:  $$ \lim_{x \to 0} \frac{\cos(x)}{1} = \frac{\cos(0)}{1} = 1 $$</p>
+                    <p>Ответ: 1</p>
+    
+                    <h3>Пример 4: Умножение на сопряженное выражение</h3>
+                    <p>Вычислить предел:  $$ \lim_{x \to 0} \frac{\sqrt{x+1} - 1}{x} $$</p>
+                    <p>Решение: Умножаем числитель и знаменатель на сопряженное выражение  $$ \sqrt{x+1} + 1 $$: $$ \lim_{x \to 0} \frac{(\sqrt{x+1} - 1)(\sqrt{x+1} + 1)}{x(\sqrt{x+1} + 1)}  = \lim_{x \to 0} \frac{x+1 - 1}{x(\sqrt{x+1} + 1)} = \lim_{x \to 0} \frac{x}{x(\sqrt{x+1} + 1)} = \lim_{x \to 0} \frac{1}{\sqrt{x+1} + 1} = \frac{1}{2} $$</p>
+                    <p>Ответ: 1/2</p>
+    
+                    <h3>Пример 5: Первый замечательный предел</h3>
+                    <p>Вычислить предел:  $$ \lim_{x \to 0} \frac{\sin(5x)}{x} $$</p>
+                    <p>Решение: Используем первый замечательный предел  $$ \lim_{x \to 0} \frac{\sin(x)}{x} = 1 $$. Преобразуем исходный предел:  $$ \lim_{x \to 0} \frac{\sin(5x)}{x} = \lim_{x \to 0} 5 \cdot \frac{\sin(5x)}{5x} = 5 \cdot 1 = 5 $$</p>
+                    <p>Ответ: 5</p>
+    
+                    <h3>Пример 6: Второй замечательный предел</h3>
+                    <p>Вычислить предел:  $$ \lim_{x \to \infty} (1 + \frac{1}{x})^x $$</p>
+                    <p>Решение: Это второй замечательный предел, который равен  $$ e $$, где e - число Эйлера (приблизительно 2.71828)</p>
+                    <p>Ответ: e</p>
+                </div>
+            </div>
+    
+            <div class="topic-block">
+                <div class="topic-header">6) Правило Лопиталя</div>
+                <div class="topic-content">
+                    <p>Правило Лопиталя — это метод вычисления пределов, который применяется к неопределенностям вида 0/0 или ∞/∞. Он утверждает, что если предел отношения функций f(x) и g(x) при x, стремящемся к a, представляет собой неопределённость, то этот предел равен пределу отношения их производных:</p>
+                    <div class="formula">
+                        $$ \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} $$
+                    </div>
+                    <p><b>Важно:</b> Правило Лопиталя можно применять только тогда, когда предел отношения функций даёт неопределённость 0/0 или ∞/∞.</p>
+                </div>
+            </div>
+    
+            <div class="topic-block">
+                <div class="topic-header">7) Замечательные пределы</div>
+                <div class="topic-content">
+                    <p>Замечательные пределы — это известные пределы, которые часто используются для упрощения вычислений:</p>
+                    <ul>
+                        <li>Первый замечательный предел:  $$ \lim_{x \to 0} \frac{\sin(x)}{x} = 1 $$</li>
+                        <li>Второй замечательный предел:  $$ \lim_{x \to \infty} (1 + \frac{1}{x})^x = e $$</li>
+                        <li>Следствие второго замечательного предела:  $$ \lim_{x \to 0} (1 + x)^{\frac{1}{x}} = e $$</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="topic-block">
+                <div class="topic-header">8) Практическое применение пределов</div>
+                <div class="topic-content">
+                    <p>Пределы используются во многих областях науки и техники, включая:</p>
+                    <ul>
+                        <li><b>Математический анализ:</b> Определение непрерывности, производных и интегралов.</li>
+                        <li><b>Физика:</b> Определение скорости и ускорения в момент времени.</li>
+                        <li><b>Экономика:</b> Моделирование экономических процессов.</li>
+                        <li><b>Информатика:</b> Анализ алгоритмов и структур данных.</li>
+                        <li><b>Инженерия:</b> Расчеты в механике, электротехнике и других областях.</li>
+                    </ul>
+                </div>
+            </div>
+    
+            <div class="topic-block">
+                <div class="topic-header">9) Непрерывность функции</div>
+                <div class="topic-content">
+                    <p>Функция f(x) называется непрерывной в точке x = a, если выполнены следующие условия:</p>
+                    <ul>
+                        <li>Функция определена в точке a, то есть f(a) существует.</li>
+                        <li>Существует предел функции при x, стремящемся к a, то есть $$ \lim_{x \to a} f(x) $$ существует.</li>
+                        <li>Этот предел равен значению функции в точке a, то есть  $$ \lim_{x \to a} f(x) = f(a) $$</li>
+                    </ul>
+                    <p>Если хотя бы одно из этих условий не выполняется, то функция называется разрывной в точке a.</p>
+                </div>
+            </div>
+        </main>
+
+    
+        <div class="auth-container hidden" id="auth_block">
+            <div class="auth-container">
+                <div class="form-container">
+                    <div class="login-form" id="loginForm">
+                        <h2>Вход</h2>
+                        <form id="loginFormInner">
+                            <div class="form-group">
+                                <label for="usernameLogin">:</label>
+                                <input type="text" id="usernameLogin" name="usernameLogin" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordLogin">:</label>
+                                <input type="password" id="passwordLogin" name="passwordLogin" required>
+                            </div>
+                            <button type="submit"></button>
+                            <p class="error-message" id="loginErrorMessage"></p>
+                        </form>
+                        <a href="#" class="form-switch" id="showRegisterForm"></a>
+                    </div>
+    
+                    <div class="register-form hidden" id="registerForm">
+                        <h2></h2>
+                        <form id="registerFormInner">
+                            <div class="form-group">
+                                <label for="usernameRegister"></label>
+                                <input type="text" id="usernameRegister" name="usernameRegister" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passwordRegister"></label>
+                                <input type="password" id="passwordRegister" name="passwordRegister" required>
+                            </div>
+                            <button type="submit"></button>
+                            <p class="error-message" id="registerErrorMessage"></p>
+                        </form>
+                        <a href="#" class="form-switch" id="showLoginForm"></a>
+                    </div>
+    
+                    <div class="welcome-message hidden" id="welcomeMessage">
+                        <h2><span id="loggedInUsername"></span>!</h2>
+                        <p><a href="./index.html"></a></p>
+                        <button id="logoutButton"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <script src="theme.js"></script>
+        <script src="burger.js"></script>
+        <script src="akk.js"></script>
+        <script src="vidio.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const headers = document.querySelectorAll('.topic-header');
+              
+                headers.forEach((header, index) => {
+                    const content = header.nextElementSibling;
+                    const storageKey = `topic-${index}-collapsed`;
+              
+                    // Check localStorage for collapsed state
+                    const isCollapsed = localStorage.getItem(storageKey) === 'true';
+                    if (isCollapsed) {
+                        content.classList.add('hidden');
+                        header.classList.add('collapsed');
+                    }
+              
+                    header.addEventListener('click', function() {
+                        this.classList.toggle('collapsed');
+                        content.classList.toggle('hidden');
+              
+                        // Save collapsed state to localStorage
+                        localStorage.setItem(storageKey, this.classList.contains('collapsed'));
+                    });
+                });
+              });
+            </script>
+
+</body>
+</html>

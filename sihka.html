@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Конспекты по основным школьным предметам. Математика, информатика, история, русский язык, физика, ОБЖ.">
+        <title> конспекты</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/dark.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <style>
+
+#background {
+  position: fixed; /* Фиксированное положение, чтобы фон всегда был на месте */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Отправляем фон за контент */
+  pointer-events: none; /* Позволяет контенту быть кликабельным сквозь фон */
+}
+
+.content {
+  position: relative; /*  Позволяет позиционировать контент поверх фона */
+  z-index: 1; /* Помещаем контент выше фона */
+  padding: 20px;
+  text-align: center;
+  min-height: 100vh; /*  Минимальная высота вьюпорта, чтобы контент мог прокручиваться */
+}
+
+
+.binary-digit {
+  position: absolute;
+  font-size: 1.2em;
+  color: #0f0; /* Ярко-зеленый цвет для бинарного кода */
+  animation: falling 10s linear infinite; /*  Анимация падения */
+  white-space: nowrap; /* Предотвращает перенос текста */
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="./"><img src="./img/acetone-2025223-205340-77.png" alt="Логотип">Все конспекты</a>
+                <span class="site-description">Ваш помощник в учебе</span>
+            </div>
+            <button class="burger-menu">☰</button>
+            <!-- Кнопка гамбургер-меню -->
+
+            <div class="nav-items">
+                <div class="nav-section">
+                    <a href="index.html"><i class="fa fa-home"></i> Главная</a>
+                    <a href="informatics.html"><i class="fa fa-code"></i> Информатика</a>
+                </div>
+
+                <div id="userProfile"></div>
+            </div>
+
+            <div class="theme-toggle">
+                <i class="fa-solid fa-moon"></i>
+            </div>
+        </nav>
+    </header>
+    <div id="background"></div>
+    <div class="contente">
+    <main>
+        <section>
+            <h2>Введение в консольный ввод/вывод в C#</h2>
+            <p>В C# класс <code>Console</code> предоставляет основные методы для взаимодействия с консолью. Два фундаментальных метода для консольного ввода и вывода - это <code>WriteLine</code> и <code>ReadLine</code>.</p>
+        </section>
+
+        <section>
+            <h2>Console.WriteLine</h2>
+            <p>Метод <code>Console.WriteLine</code> используется для записи строки текста в консоль. Он может принимать строковый литерал, переменную или выражение в качестве входных данных.</p>
+
+            <h3>Синтаксис</h3>
+            <pre><code>Console.WriteLine(значение);</code></pre>
+
+            <h3>Пример</h3>
+            <pre><code>using System;
+
+public class Example
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Привет, мир!"); // Выводит "Привет, мир!" в консоль
+        string name = "Алиса";
+        Console.WriteLine("Привет, " + name + "!"); // Выводит "Привет, Алиса!" в консоль
+        int age = 30;
+        Console.WriteLine($"Возраст: {age}"); // Выводит "Возраст: 30" в консоль (интерполяция строк)
+    }
+}
+</code></pre>
+
+            <h3>Объяснение</h3>
+            <ul>
+                <li>Первый оператор <code>WriteLine</code> выводит простой строковый литерал.</li>
+                <li>Второй оператор <code>WriteLine</code> использует конкатенацию строк для объединения строкового литерала с переменной.</li>
+                <li>Третий оператор <code>WriteLine</code> использует интерполяцию строк (используя символ <code>$</code> перед строкой) для внедрения значения переменной <code>age</code> непосредственно в строку.  Обычно это считается наиболее читаемым способом форматирования строк в C#.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Console.ReadLine</h2>
+            <p>Метод <code>Console.ReadLine</code> используется для чтения строки текста из консольного ввода. Он возвращает введенные данные в виде строки.</p>
+
+            <h3>Синтаксис</h3>
+            <pre><code>string input = Console.ReadLine();</code></pre>
+
+            <h3>Пример</h3>
+            <pre><code>using System;
+
+public class Example
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Пожалуйста, введите ваше имя:");
+        string name = Console.ReadLine(); // Читает имя, введенное пользователем
+        Console.WriteLine("Привет, " + name + "!");
+    }
+}
+</code></pre>
+
+            <h3>Объяснение</h3>
+            <ul>
+                <li>Код сначала предлагает пользователю ввести свое имя с помощью <code>Console.WriteLine</code>.</li>
+                <li>Затем <code>Console.ReadLine</code> ожидает, пока пользователь что-нибудь напечатает и нажмет Enter.  Введенный текст затем сохраняется в переменной <code>name</code> в виде строки.</li>
+                <li>Наконец, код приветствует пользователя по имени с помощью <code>Console.WriteLine</code>.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Комбинирование WriteLine и ReadLine</h2>
+            <p>Вы можете комбинировать <code>WriteLine</code> и <code>ReadLine</code> для создания интерактивных консольных приложений.</p>
+
+            <h3>Пример</h3>
+            <pre><code>using System;
+
+public class Example
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Введите первое число:");
+        string num1Str = Console.ReadLine();
+        int num1 = int.Parse(num1Str);
+
+        Console.WriteLine("Введите второе число:");
+        string num2Str = Console.ReadLine();
+        int num2 = int.Parse(num2Str);
+
+        int sum = num1 + num2;
+
+        Console.WriteLine("Сумма равна: " + sum);
+    }
+}
+</code></pre>
+
+            <h3>Объяснение</h3>
+            <ul>
+                <li>Код предлагает пользователю ввести два числа.</li>
+                <li>Он использует <code>Console.ReadLine</code> для чтения чисел в виде строк.</li>
+                <li>Поскольку <code>ReadLine</code> возвращает строку, нам нужно преобразовать строки в целые числа с помощью <code>int.Parse()</code>, прежде чем мы сможем выполнить сложение. Обратите внимание: важно обрабатывать возможные исключения, которые могут быть вызваны, если пользователь вводит нечисловые данные. См. следующий раздел.</li>
+                <li>Наконец, код вычисляет сумму и отображает ее в консоли.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Обработка ошибок с ReadLine</h2>
+            <p>Крайне важно включать обработку ошибок при использовании <code>Console.ReadLine</code> и таких методов, как <code>int.Parse()</code>, поскольку пользователи могут вводить неожиданные данные. Использование <code>int.TryParse</code> может предотвратить сбой вашей программы.</p>
+
+            <h3>Пример</h3>
+            <pre><code>using System;
+
+public class Example
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Введите первое число:");
+        string num1Str = Console.ReadLine();
+        int num1;
+
+        if (!int.TryParse(num1Str, out num1))
+        {
+            Console.WriteLine("Неверный ввод для первого числа. Пожалуйста, введите целое число.");
+            return; // Выход из программы, если ввод недействителен
+        }
+
+        Console.WriteLine("Введите второе число:");
+        string num2Str = Console.ReadLine();
+        int num2;
+
+        if (!int.TryParse(num2Str, out num2))
+        {
+            Console.WriteLine("Неверный ввод для второго числа. Пожалуйста, введите целое число.");
+            return; // Выход из программы, если ввод недействителен
+        }
+
+        int sum = num1 + num2;
+
+        Console.WriteLine("Сумма равна: " + sum);
+    }
+}
+</code></pre>
+
+            <h3>Объяснение</h3>
+            <ul>
+                <li><code>int.TryParse()</code> пытается преобразовать входную строку в целое число.</li>
+                <li>Если преобразование выполнено успешно, он возвращает <code>true</code>, и преобразованное целое число сохраняется в переменных <code>num1</code> и <code>num2</code>.</li>
+                <li>Если преобразование не удается (например, пользователь вводит текст вместо числа), он возвращает <code>false</code> и отображается сообщение об ошибке. Затем программа завершает работу, чтобы предотвратить дальнейшие ошибки.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <div class="auth-container hidden" id="auth_block">
+        <div class="auth-container">
+            <div class="form-container">
+                <div class="login-form" id="loginForm">
+                    <h2>Вход</h2>
+                    <form id="loginFormInner">
+                        <div class="form-group">
+                            <label for="usernameLogin">:</label>
+                            <input type="text" id="usernameLogin" name="usernameLogin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordLogin">:</label>
+                            <input type="password" id="passwordLogin" name="passwordLogin" required>
+                        </div>
+                        <button type="submit"></button>
+                        <p class="error-message" id="loginErrorMessage"></p>
+                    </form>
+                    <a href="#" class="form-switch" id="showRegisterForm"></a>
+                </div>
+    
+                <div class="register-form hidden" id="registerForm">
+                    <h2></h2>
+                    <form id="registerFormInner">
+                        <div class="form-group">
+                            <label for="usernameRegister"></label>
+                            <input type="text" id="usernameRegister" name="usernameRegister" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordRegister"></label>
+                            <input type="password" id="passwordRegister" name="passwordRegister" required>
+                        </div>
+                        <button type="submit"></button>
+                        <p class="error-message" id="registerErrorMessage"></p>
+                    </form>
+                    <a href="#" class="form-switch" id="showLoginForm"></a>
+                </div>
+    
+                <div class="welcome-message hidden" id="welcomeMessage">
+                    <h2><span id="loggedInUsername"></span>!</h2>
+                    <p><a href="./index.html"></a></p>
+                    <button id="logoutButton"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="burger.js"></script>
+    <script src="theme.js"></script>
+    <script src="akk.js"></script>
+    <script src="anim.js"></script>
+</body>
+</html>
